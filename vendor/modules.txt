@@ -1,0 +1,58 @@
+# github.com/bitrise-io/bitrise-init v0.0.0-20210518121553-1e678625c45d
+## explicit
+github.com/bitrise-io/bitrise-init/errormapper
+# github.com/bitrise-io/envman v0.0.0-20210517135508-b2b4fe89eac5
+## explicit
+github.com/bitrise-io/envman/envman
+github.com/bitrise-io/envman/models
+# github.com/bitrise-io/go-steputils v0.0.0-20210514150206-5b6261447e77
+## explicit
+github.com/bitrise-io/go-steputils/input
+github.com/bitrise-io/go-steputils/step
+github.com/bitrise-io/go-steputils/stepconf
+github.com/bitrise-io/go-steputils/tools
+# github.com/bitrise-io/go-utils v0.0.0-20210713111255-08be784d45d0
+## explicit
+github.com/bitrise-io/go-utils/colorstring
+github.com/bitrise-io/go-utils/command
+github.com/bitrise-io/go-utils/command/git
+github.com/bitrise-io/go-utils/errorutil
+github.com/bitrise-io/go-utils/filedownloader
+github.com/bitrise-io/go-utils/fileutil
+github.com/bitrise-io/go-utils/log
+github.com/bitrise-io/go-utils/parseutil
+github.com/bitrise-io/go-utils/pathutil
+github.com/bitrise-io/go-utils/pointers
+github.com/bitrise-io/go-utils/retry
+github.com/bitrise-io/go-utils/sliceutil
+# github.com/bitrise-io/goinp v0.0.0-20210504152833-8559b0680ab1
+github.com/bitrise-io/goinp/goinp
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/hashicorp/go-cleanhttp v0.5.2
+## explicit
+github.com/hashicorp/go-cleanhttp
+# github.com/hashicorp/go-retryablehttp v0.7.0
+## explicit
+github.com/hashicorp/go-retryablehttp
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/stretchr/objx v0.3.0
+github.com/stretchr/objx
+# github.com/stretchr/testify v1.7.0
+## explicit
+github.com/stretchr/testify/assert
+github.com/stretchr/testify/mock
+# golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20210514084401-e8d321eab015
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/term v0.0.0-20210503060354-a79de5458b56
+golang.org/x/term
+# gopkg.in/yaml.v2 v2.4.0
+gopkg.in/yaml.v2
+# gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+gopkg.in/yaml.v3

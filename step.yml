@@ -1,0 +1,64 @@
+title: Git Clone Repository
+summary: The Step checks out the defined repository state, optionally updates the repository submodules and exports the achieved git repository state properties.
+description: |
+  The checkout process depends on the checkout properties: the Step either checks out a repository state defined by a git commit or a git tag, or achieves a merged state of a pull / merge request.
+  The Step uses two solutions to achieve the merged state of the pull / merge request: auto merge in the case of a merge branch or diff file (provided by the Git service) and manual merge otherwise.
+  Once the desired state is checked out, the Step optionally updates the submodules. In the case of pull / merge request, the Step checks out a detach head and exports the achieved git state properties.
+
+  ### Configuring the Step
+
+  1. The **Git repository URL** and the ** Clone destination (local)directory path** fields are required fields and are automatically filled out based on your project settings.
+  Optionally, you can modify the following fields in the **Clone Config** section:
+  1. You can set the **Update the registered submodules?** option to `yes` to pull the most up-to-date version of the submodule from the submodule's repository.
+  2. You can set the number of commits you want the Step to fetch in the **Limit fetching to the specified number of commits** option. Make sure you set a decimal number.
+
+  Other **Clone config** inputs are not editable unless you go to the **bitrise.yml** tab, however, to avoid issues, we suggest you to contact our Support team instead.
+
+  ### Troubleshooting
+  If you have GitHub Enterprise set up, it works slightly differently on [bitrise.io](https://www.bitrise.io) than on [github.com](https://github.com). You have to manually set the git clone URL, register the SSH key and the webhook.
+  If you face network issues in the case of self-hosted git servers, we advise you to contact our Support Team to help you out.
+  If you face slow clone speed, set the **Limit fetching to the specified number of commits** to the number of commits you want to clone instead of cloning the whole commit history or you can use the Git LFS solution provided by the git provider.
+
+  ### Useful links
+
+  - [How to register a GitHub Enterprise repository](https://discuss.bitrise.io/t/how-to-register-a-github-enterprise-repository/218)
+  - [Code security](https://devcenter.bitrise.io/getting-started/code-security/)
+
+  ### Related Steps
+
+  - [Activate SSH key (RSA private key)](https://www.bitrise.io/integrations/steps/activate-ssh-key)
+  - [Bitrise.io Cache:Pull](https://www.bitrise.io/integrations/steps/cache-pull)
+  - [Bitrise.io Cache:Push](https://www.bitrise.io/integrations/steps/cache-push)
+
+website: https://github.com/bitrise-steplib/steps-git-branch
+source_code_url: https://github.com/bitrise-steplib/steps-git-branch
+support_url: https://github.com/bitrise-steplib/steps-git-branch/issues
+type_tags:
+- utility
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+# run_if: .IsCI
+deps:
+  brew:
+  - name: git-lfs
+  apt_get:
+  - name: git-lfs
+toolkit:
+  go:
+    package_name: github.com/bitrise-steplib/steps-git-branch
+inputs:
+- branch: $BITRISE_GIT_BRANCH
+  opts:
+    category: Branch arguments
+    title: Currently non-existent branch to create
+    is_dont_change_value: true
+- base: $BITRISE_GIT_BASE_BRANCH
+  opts:
+    category: Branch arguments
+    title: Base branch to create branch from
+    is_dont_change_value: true
+outputs:
+- GIT_BRANCH_COMMIT_HASH:
+  opts:
+    title: Branched git commit's commit hash
